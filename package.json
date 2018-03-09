@@ -1,0 +1,28 @@
+{
+  "name": "runescrape",
+  "version": "1.0.0",
+  "description": "A MongoDB web-scraper app to bring you the latest Old School Runescape news all in one place",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Digald/RuneScrape.git"
+  },
+  "author": "Mark Alaniz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Digald/RuneScrape/issues"
+  },
+  "homepage": "https://github.com/Digald/RuneScrape#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.0.9",
+    "request": "^2.83.0"
+  }
+}

@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'acadian-runes';
+    src: url('../fonts/Acadian_Runes.ttf');
+}
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-image: url("../images/bg.jpg");
+}
+/*==========================================
+Navbar styles
+===========================================*/
+.navbar {
+  /* background: url("../images/css18.jpg"); */
+  background-color: #d9dbd7;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    /* border: 2px solid white; */
+}
+.title-text {
+    font-family: acadian-runes;
+    letter-spacing: 3px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+.wrap-scrape {
+    padding: 10px;
+}
+.scrape-button {
+  background-color: #6b631a;
+  border-color: #6b631a;
+  color: white;
+}
+
+.scrape-button:hover,
+.scrape-button:focus,
+.scrape-button:active {
+  color: #d9dbd7;
+}
+
+.content {
+    background-color: #B59E70;
+    /* background-image: url("https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_960_720.jpg"); */
+    height: 500px;
+    color: black;
+}

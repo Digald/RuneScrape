@@ -1,8 +1,4 @@
-module.exports = function(app) {
-    app.get('/', function(req, res) {
-        res.render('home', {
-            css: "home.css",
-            js: "home.js"
-        });
-    });
+module.exports = {
+    Headline: require('./Headline'),
+    Note: require('./Note')
 }

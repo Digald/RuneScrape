@@ -1,8 +1,8 @@
+var headline_controller = require("../controllers/headline.js");
+
 module.exports = function(app) {
-    app.get('/', function(req, res) {
-        res.render('home', {
-            css: "home.css",
-            js: "home.js"
-        });
-    });
-}
+
+  app.get("/", headline_controller.display_scrape);
+
+  app.get("/scrape", headline_controller.scrape_page);
+};

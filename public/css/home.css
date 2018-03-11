@@ -52,7 +52,7 @@ Navbar styles
 
 .content {
     background-color: #B59E70;
-    /* background-image: url("https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_960_720.jpg"); */
-    height: 500px;
+    height: auto;
+    padding: 20px;
     color: black;
 }

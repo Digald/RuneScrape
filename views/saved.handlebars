@@ -1,0 +1,35 @@
+<nav class="navbar level">
+    <p class="level-item has-text-centered">
+        <a class="link is-info" href="#">Home</a>
+    </p>
+    <p class="level-item has-text-centered">
+        <a class="link is-info" href="#">Saved Articles</a>
+    </p>
+    <p class="level-item has-text-centered title-text">
+        RUNESCRAPE
+    </p>
+    <p class="level-item has-text-centered wrap-scrape">
+        <a href="/scrape">
+            <button class="button scrape-button">Scrape New News!</button>
+        </a>
+    </p>
+</nav>
+<section class="section">
+    <div class="container content">
+        {{#if article}} {{#each article}} {{#if saved}}
+        <div class="new-article" data-id="{{_id}}">
+            <div class="columns">
+                <div class="column is-11">
+                    <h1 class="a-title">{{title}}</h1>
+                </div>
+                <div class="column">
+                    <button class="button save-article is-primary">Save</button>
+                </div>
+            </div>
+            <a href="{{link}}" target="_blank">{{summary}}</a>
+        </div>
+        {{/if}} {{/each}} {{else}}
+        <p>No articles to show. Please do a new scrape.</p>
+        {{/if}}
+    </div>
+</section>

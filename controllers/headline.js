@@ -4,7 +4,6 @@ var cheerio = require("cheerio");
 
 exports.display_scrape = function(req, res) {
   db.Headline.find({}).then(function(result) {
-    // console.log(result);
     res.render("home", {
       css: "home.css",
       js: "home.js",
@@ -13,6 +12,12 @@ exports.display_scrape = function(req, res) {
   });
 };
 
+exports.view_saved = function(req, res) {
+  res.render('saved', {
+    css: 'saved.css',
+    js: 'saved.js',
+  });
+};
 exports.scrape_page = function(req, res) {
   db.Headline.remove({ saved: false }).then(function(result) {
     axios

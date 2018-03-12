@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "acadian-runes";
+  src: url("../fonts/Acadian_Runes.ttf");
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url("../images/bg.jpg");
+  height: 100%;
+}
+
+/*==========================================
+  Navbar styles
+  ===========================================*/
+.navbar {
+  /* background: url("../images/css18.jpg"); */
+  background-color: #d9dbd7;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+.navbar a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  /* border: 2px solid white; */
+}
+.title-text {
+  font-family: acadian-runes;
+  letter-spacing: 3px;
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+}
+.wrap-scrape {
+  padding: 10px;
+}
+.scrape-button {
+  background-color: #050558;
+  border-color: #050558;
+  color: white;
+}
+
+.scrape-button:hover,
+.scrape-button:focus,
+.scrape-button:active {
+  color: #d9dbd7;
+}
+/*==========================================
+Article section
+===========================================*/
+.content {
+  background-color: #b59e70;
+  height: auto;
+  padding: 20px;
+  /* color: black; */
+}
+.new-article {
+  padding: 10px;
+  text-align: center;
+}
+.content .columns {
+  background-color: #6b631a;
+}
+.content .a-title {
+  color: white;
+}
+.content a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}

@@ -13,9 +13,12 @@ exports.display_scrape = function(req, res) {
 };
 
 exports.view_saved = function(req, res) {
-  res.render('saved', {
-    css: 'saved.css',
-    js: 'saved.js',
+  db.Headline.find({ saved: true }).then(function(result) {
+    res.render("saved", {
+      css: "saved.css",
+      js: "saved.js",
+      article: result
+    });
   });
 };
 exports.scrape_page = function(req, res) {
@@ -41,9 +44,7 @@ exports.scrape_page = function(req, res) {
             .find(".secondary-link")
             .attr("href");
           // Add to database
-          db.Headline.create(result).then(function(dbHeadline) {
-            // console.log(dbHeadline);
-          });
+          db.Headline.create(result).then(function(dbHeadline) {});
         });
         res.redirect("/");
       });
@@ -51,11 +52,26 @@ exports.scrape_page = function(req, res) {
 };
 
 exports.save_article = function(req, res) {
-  console.log(req.body);
   db.Headline.findOneAndUpdate(
     { _id: req.body.id },
     { $set: { saved: true } }
   ).then(result => {
+    res.json(result);
+  });
+};
+
+exports.unsave_article = function(req, res) {
+  db.Headline.remove({ _id: req.body.id }).then(function(result) {
+    res.json(results);
+  });
+};
+
+exports.add_comment = function(req, res) {
+  console.log(req.body);
+  db.Headline.findOneAndUpdate(
+    { _id: req.body.id },
+    { $push: { note: req.body.note } }
+  ).then(function(result) {
     res.json(result);
   });
 };

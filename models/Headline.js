@@ -20,8 +20,7 @@ var HeadlineSchema = new Schema({
     required: true
   },
   note: {
-    type: Schema.Types.ObjectId,
-    ref: "Note"
+    type: Array
   }
 });
 

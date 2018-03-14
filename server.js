@@ -2,6 +2,7 @@
 var mongoose = require("mongoose");
 var express = require("express");
 var bodyParser = require("body-parser");
+var https = require("https");
 
 // Require all models
 var db = require("./models");
@@ -30,6 +31,11 @@ app.set("view engine", "handlebars");
 require("./routes/api.js")(app);
 require("./routes/index.js")(app);
 require("./routes/view.js")(app);
+
+// ping heroku
+setInterval(function() {
+  https.get("https://runescrape.herokuapp.com/");
+}, 300000);
 
 // Start the server
 app.listen(PORT, function() {

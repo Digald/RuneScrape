@@ -4,6 +4,7 @@ var cheerio = require("cheerio");
 
 exports.display_scrape = function(req, res) {
   db.Headline.find({}).then(function(result) {
+    console.log(result);
     res.render("home", {
       css: "home.css",
       js: "home.js",
@@ -62,7 +63,7 @@ exports.save_article = function(req, res) {
 
 exports.unsave_article = function(req, res) {
   db.Headline.remove({ _id: req.body.id }).then(function(result) {
-    res.json(results);
+    res.json(result);
   });
 };
 

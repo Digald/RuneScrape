@@ -1,11 +1,20 @@
 $(document).ready(function() {
   // modal functionality
-  $(".showModal").click(function() {
-    $(".modal").addClass("is-active");
+  $(".showModal").on("click", function(e) {
+      e.preventDefault()
+    // $(".modal").addClass("is-active");
+    $(this)
+      .parents(".new-article")
+      .next(".modal")
+      .addClass("is-active");
   });
 
-  $(".modal-close").click(function() {
-    $(".modal").removeClass("is-active");
+  $(".modal-close").on("click", function(e) {
+      e.preventDefault();
+    // $(".modal").removeClass("is-active");
+    $(this)
+      .parents(".modal")
+      .removeClass("is-active");
   });
 
   $(".unsave-article").on("click", function(e) {
@@ -25,22 +34,27 @@ $(document).ready(function() {
       .remove();
   });
 
-  $("#submit-comment").on("click", function(e) {
+  $(".submit-comment").on("click", function(e) {
     e.preventDefault();
-    var articleId = $(this)
-      .parents(".field")
-      .data("id");
-    var userComment = $('#user-comment').val();
+    var articleId = $(this).data("id");
+    console.log(articleId);
+    var userComment = $(this)
+      .parents(".box")
+      .find(".user-comment")
+      .val();
     $.ajax({
-        method: 'POST',
-        data: {
-            id: articleId,
-            note: userComment
-        },
-        url: '/addcomment'
-    }).done(function(data){
-        $('.comment-section ul').append(`<li>${userComment}</li>`);
+      method: "POST",
+      data: {
+        id: articleId,
+        note: userComment
+      },
+      url: "/addcomment"
+    }).done(function(data) {
+      $(this).parents('.box').find('<ul>').append(`<li>${userComment}</li>`);
     });
-    $('#user-comment').val('');
+    $(this)
+      .parents(".box")
+      .find(".user-comment")
+      .val("");
   });
 });

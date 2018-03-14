@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // modal functionality
   $(".showModal").on("click", function(e) {
-      e.preventDefault()
+    e.preventDefault();
     // $(".modal").addClass("is-active");
     $(this)
       .parents(".new-article")
@@ -10,7 +10,7 @@ $(document).ready(function() {
   });
 
   $(".modal-close").on("click", function(e) {
-      e.preventDefault();
+    e.preventDefault();
     // $(".modal").removeClass("is-active");
     $(this)
       .parents(".modal")
@@ -37,7 +37,6 @@ $(document).ready(function() {
   $(".submit-comment").on("click", function(e) {
     e.preventDefault();
     var articleId = $(this).data("id");
-    console.log(articleId);
     var userComment = $(this)
       .parents(".box")
       .find(".user-comment")
@@ -49,9 +48,11 @@ $(document).ready(function() {
         note: userComment
       },
       url: "/addcomment"
-    }).done(function(data) {
-      $(this).parents('.box').find('<ul>').append(`<li>${userComment}</li>`);
     });
+    $(this)
+      .parents(".box")
+      .find(".comment-list")
+      .append(`<li>${userComment}</li>`);
     $(this)
       .parents(".box")
       .find(".user-comment")
